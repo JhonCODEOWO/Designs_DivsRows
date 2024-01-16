@@ -14,6 +14,17 @@
 </head>
 
 <body class="no-margin">
+    <header class="header flex flex-row space-bt">
+        <div class="header-title f-2">
+            <h5 class="no-margin">JhonDEV Templates</h5>
+        </div>
+
+        <div class="header-navs flex flex-row f-1 flex-end pr-2 align-center">
+            <a href="">Acerca de mi</a>
+            <a href="">Conoce mis proyectos</a>
+        </div>
+    </header>
+
     <h1 class="txt-center">Div estilizado para presentación de información</h1>
     <p>Hay ocasiones en donde necesitamos un estilo personalizado para mostrar información destacada de un sitio web,
         para ello puedes apoyarte de los siguientes samples. Prueba a cambiar los colores de una paleta predefinida para poder encontrar tu propio estilo.</p>
@@ -48,8 +59,7 @@
             <p id="infoFontColor" style="text-align: center;">Prueba</p>
         </div>
     </div>
-
-    <button class="btn btn-success" id="btnModal">Seleccinar nuevos colores para la paleta</button>
+    <button class="btn btn-success btnPaleta" id="btnModal">Seleccinar nuevos colores para la paleta</button>
 
     <h2>Ejemplo 1</h2>
     <div class="content-main flex align-center justify-center" id="content-main">
@@ -79,6 +89,32 @@
     <h2>Estructura HTML</h2>
     <script src="https://gist.github.com/JhonCODEOWO/15dda462070f2b34f040206c1850ccb5.js"></script>
 
+    <h2>Ejemplo 2</h2>
+    <div class="content-main flex align-center justify-center overflow">
+        <div class="content-background content-full flex flex-wrap cancel-responsive space-bt align-center padd-2">
+            <!-- Puedes usar tambien javascript para crear los elementos div -->
+            <div class="content-forms rombo"></div>
+            <div class="content-forms rombo"></div>
+            <div class="content-forms rombo"></div>
+            <div class="content-forms rombo"></div>
+            <div class="content-forms rombo"></div>
+        </div>
+        <div class="content-information">
+            <div class="padd-2">
+                <div class="content-header">
+                    <h2>Aquí va el titulo de ti información</h2>
+                </div>
+
+                <div class="content-text">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid officia non ad itaque. Ipsa veniam aliquam incidunt possimus distinctio! Eum!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>Estructura HTML</h2>
+    <script src="https://gist.github.com/JhonCODEOWO/2e724d5b29774b0cec1842c392ed4b89.js"></script>
+
+    <!-- Modal para ingresar los colores -->
     <div class="modal" id="modal">
         <div class="modal-header padd-2">
             <h2 class="txt-center no-margin" style="color: white;">Selecciona los colores a aplicar a la paleta</h2>
@@ -103,5 +139,6 @@
 </body>
 
 <script src="js/script.js"></script>
+<script src="js/script-ui.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
 </html>

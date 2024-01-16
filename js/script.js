@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     aplicarBgColor(codigoHexPrimario, divContentMain);
     aplicarBgColor(codigoHexSecundario, divContentBgSec);
-
+    aplicarBgColor(codigoHexTerciario, divFormas);
     aplicarColor(codigoHexFont, divContentMain);
 
     const pickr1 = Pickr.create({
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
     pickr3.on('save', (color, instance) =>{
         codigoHexTerciario = color.toHEXA().toString();
         aplicarBgColor(codigoHexTerciario, tertiaryColorDiv);
-        // aplicarBgColor(codigoHexTerciario, divContentBgTrt);
+        aplicarBgColor(codigoHexTerciario, divFormas);
         aplicarTextoElemento(infoTertiaryColor, codigoHexTerciario);
         pickr3.hide();
     });
@@ -277,7 +277,13 @@ function rgbToHex(rgb) {
 
 function aplicarBgColor(color, elementoSeleccionado) {
     try {
-        elementoSeleccionado.style.backgroundColor = color;
+        if (elementoSeleccionado instanceof NodeList) {
+            elementoSeleccionado.forEach(element => {
+                element.style.backgroundColor = color;
+            });
+        }else{
+            elementoSeleccionado.style.backgroundColor = color;
+        }
     } catch (error) {
         alert("Se ha producido un error en el método aplicar BgColor " + error.message);
     }
@@ -323,8 +329,9 @@ function cargarElementos() {
     infoFontColor = document.querySelector('#infoFontColor');
 
     //Elementos del diseño para el ejemplo 1
-    divContentMain = document.querySelector('.content-main');
-    divContentBgSec = document.querySelector('.content-background');
+    divContentMain = document.querySelectorAll('.content-main');
+    divContentBgSec = document.querySelectorAll('.content-background');
+    divFormas = document.querySelectorAll('.content-forms');
 
     //Elementos generales de los ejemplos
     titulo = document.querySelectorAll('.content-header');
@@ -336,6 +343,8 @@ function btnModal_Action() {
     btnModal.addEventListener('click', function () {
         //Mostrar modal
         modal.classList.add('show');
+        btnPaleta.classList.remove('show');
+        btnPaleta.classList.add('hide');
         document.body.classList.add('overflow');
         modal.scrollIntoView({ behavior: 'smooth', block: 'center'});
     });
@@ -346,6 +355,8 @@ function cerrarModal(accion) {
         document.body.classList.remove('overflow');
         modal.classList.remove('show');
         modal.classList.add('hide');
+        btnPaleta.classList.remove('hide');
+        btnPaleta.classList.add('show');
     }else{
         console.log("Has pulsado aceptar");
     }

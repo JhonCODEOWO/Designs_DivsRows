@@ -35,6 +35,12 @@ p{
     font-size: 2.2rem;
 }
 
+a{
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: black;
+}
+
 img{
     width: 50%;
     border-radius: 50%;
@@ -42,6 +48,25 @@ img{
 
 label{
     font-size: 1.5rem;
+}
+
+/* Animaciones */
+@keyframes desvanecer {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fromTop {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 10rem;
+    }
 }
 
 .btn{
@@ -70,8 +95,39 @@ label{
     background-color: red;
 }
 
+/* Componentes principales de la página */
+.header{
+    background-color: #280274;
+    padding: 2.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+}
 
+.header-title{
+    color: white;
+}
 
+.header-title h5{
+    font-size: 2rem;
+    font-weight: 200;
+    padding: 0 2rem;
+}
+
+.header-navs{
+
+}
+
+.header-navs a{
+    color: white;
+}
+
+.btnPaleta{
+    z-index: 999;
+    animation: desvanecer .2s ease-in-out;
+}
+
+/* Colores */
 .bg-main{
     background-color: #030637;
 }
@@ -84,12 +140,18 @@ label{
     background-color: #720455;
 }
 
+/* Utilidades generales */
+
 .padd-2{
     padding: 2rem;
 }
 
 .pl-2{
     padding-left: 2rem;
+}
+
+.pr-2{
+    padding-right: 2rem;
 }
 
 .mar-2{
@@ -133,6 +195,14 @@ label{
     gap: 1rem;
 }
 
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+.flex-end{
+    justify-content: end;
+}
+
 .justify-center{
     justify-content: center;
 }
@@ -153,6 +223,13 @@ label{
     margin: 0;
 }
 
+/* Figuras */
+.rombo{
+    width: 5rem;
+    height: 5rem;
+    transform: rotate(45deg);
+}
+
 /* Clases para javascript */
 .hide{
     display:none;
@@ -170,13 +247,15 @@ label{
 .modal{
     /* display: none; */
     position: absolute;
-    top: 0;
+    top: 10rem;
     left: 50%;
     transform: translateX(-50%);
     width: 70%;
     /* margin: 0 2rem; */
     border-radius: 1rem;
     background-color: gainsboro;
+    z-index: 110000;
+    animation: fromTop .5s ease-in-out;
 }
 
 .modal-header{
@@ -212,6 +291,11 @@ label{
     height: 32%;
     width: 100%;
     top: 0;
+}
+
+.content-background.content-full{
+    height: 100%;
+    width: 100%;
 }
 
 @media (min-width: 768px){
