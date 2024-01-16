@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div con estilo para presentación de datos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/>
+</head>
+
+<body class="no-margin">
+    <h1 class="txt-center">Div estilizado para presentación de información</h1>
+    <p>Hay ocasiones en donde necesitamos un estilo personalizado para mostrar información destacada de un sitio web,
+        para ello puedes apoyarte de los siguientes samples. Prueba a cambiar los colores de una paleta predefinida para poder encontrar tu propio estilo.</p>
+
+    <h3>Colores de la paleta actual</h3>
+    <div class="flex flex-row cancel-responsive justify-center">
+        <div class="flex flex-column justify-center">
+            <div id="firstColor" class="firstColor" style="margin: 0 auto;">
+
+            </div>
+            <p id="infoFirstColor" style="text-align: center;">Prueba</p>
+        </div>
+
+        <div class="flex flex-column justify-center">
+            <div id="secondaryColor" class="secondaryColor" style="margin: 0 auto;">
+
+            </div>
+            <p id="infoSecondaryColor" style="text-align: center;">Prueba</p>
+        </div>
+
+        <div class="flex flex-column justify-center">
+            <div id="tertiaryColor" class="tertiaryColor" style="margin: 0 auto;">
+
+            </div>
+            <p id="infoTertiaryColor" style="text-align: center;">Prueba</p>
+        </div>
+
+        <div class="flex flex-column justify-center">
+            <div id="fontColor" class="fontColor"  style="margin: 0 auto;">
+
+            </div>
+            <p id="infoFontColor" style="text-align: center;">Prueba</p>
+        </div>
+    </div>
+
+    <button class="btn btn-success" id="btnModal">Seleccinar nuevos colores para la paleta</button>
+
+    <h2>Ejemplo 1</h2>
+    <div class="content-main flex align-center justify-center" id="content-main">
+        <div class="content-background" id="content-background">
+
+        </div>
+        <div class="content-information">
+            <!-- Puedes organizar el contenido a mostrar aquí de la manera que desees la estructura a continuación es usada solo para el ejemplo de diseño-->
+            <div class="flex flex-row space-bt">
+                <div class="flex flex-column f-2 padd-2">
+                    <div class="content-header">
+                        <h2 >TITULO PARA LA INFORMACIÓN</h2>
+                    </div>
+                    <div class="content-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti iure magni commodi nisi
+                            consequatur illum aspernatur beatae deserunt veniam molestias?</p>
+                    </div>
+                </div>
+
+                <div class="content-image flex align-center justify-center f-1">
+                    <img src="img/img1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Estructura HTML</h2>
+    <script src="https://gist.github.com/JhonCODEOWO/15dda462070f2b34f040206c1850ccb5.js"></script>
+
+    <div class="modal" id="modal">
+        <div class="modal-header padd-2">
+            <h2 class="txt-center no-margin" style="color: white;">Selecciona los colores a aplicar a la paleta</h2>
+        </div>
+
+        <div class="modal-input padd-2 flex flex-column">
+            <label for="colorPrimario">Color primario:</label>
+            <button id="colorPrimario" class="color-picker"></button>
+            <label for="colorSecundario">Color secundario:</label>
+            <button id="colorSecundario" class="color-picker-sec"></button>
+            <label for="colorTerciario">Color terciario:</label>
+            <button id="colorTerciario" class="color-picker-trt"></button>
+            <label for="colorFuente">Color de la fuente (Se aplica a todos los diseños):</label>
+            <button id="colorFuente" class="color-picker-font"></button>
+        </div>
+
+        <div class="modal-buttons flex flex-row cancel-responsive mt-2">
+            <button class="btn btn-error" onclick="cerrarModal('cerrar')"> Cerrar </button>
+            <button class="btn btn-success" onclick="cerrarModal('aceptar')"> Confirmar cambios</button>
+        </div>
+    </div>
+</body>
+
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
+</html>
