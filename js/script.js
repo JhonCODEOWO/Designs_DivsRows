@@ -337,6 +337,7 @@ function btnModal_Action() {
         //Mostrar modal
         modal.classList.add('show');
         document.body.classList.add('overflow');
+        modal.scrollIntoView({ behavior: 'smooth', block: 'center'});
     });
 }
 

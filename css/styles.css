@@ -173,7 +173,8 @@ label{
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    margin: 0 2rem;
+    width: 70%;
+    /* margin: 0 2rem; */
     border-radius: 1rem;
     background-color: gainsboro;
 }
@@ -186,8 +187,6 @@ label{
 
 .modal-input{
     background-color: gainsboro;
-    display: flex;
-    flex-direction: column;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     padding: 1rem 1rem;
